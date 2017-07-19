@@ -20,7 +20,9 @@
             }
             element['_method'] = function(callName, callBody) {
                 element.root[callName] = function() {
-                    element.root.trigger(callName)
+                    var args = Array.prototype.slice.call(arguments);
+                    args.unshift(callName)
+                    element.root.trigger.apply(element.root, args)
                 }
                 element.root.on(callName, callBody)
 
