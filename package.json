@@ -1,6 +1,6 @@
 {
     "name": "riotcomponent",
-    "version": "0.0.9",
+    "version": "0.0.10",
     "description": "Library to make it easy to make riotjs component.",
     "main": "riotcomponent.js",
     "scripts": {

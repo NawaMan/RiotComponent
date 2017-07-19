@@ -1,4 +1,4 @@
-/* RiotComponent v0.0.9, @license MIT */
+/* RiotComponent v0.0.10, @license MIT */
 (function(global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
         typeof define === 'function' && define.amd ? define(factory) :
@@ -11,10 +11,13 @@
             riot.observable(element.root)
 
             element['_event'] = function(eventName, callback) {
-                return function(params) {
-                    element.root.trigger(eventName, params)
+                return function() {
+                    var callBackArgs = Array.prototype.slice.call(arguments);
+                    var triggerArgs = Array.prototype.slice.call(arguments);
+                    triggerArgs.unshift(eventName)
+                    element.root.trigger.apply(element.root, triggerArgs)
                     if (typeof(callback) === 'function') {
-                        callback(params);
+                        callback.apply(element.root, callBackArgs);
                     }
                 }
             }
