@@ -2,7 +2,77 @@
 The library to make it easy to make riotjs component.
 
 # Introduction
-RiotComponent adds method, property or event to the root element so that it can be accessed from the outside.
+RiotComponent adds method, property or event to the root element so that it can be accessed from the outside. **Methods** allows the parent element to call functions in the child elements. **Properties** expose settable value of the children elements to the parent. When set the child will be notify so that appropirate actions (such as update) can be done. **Events** will allows the child elements to notify the parent element when something happen.
+
+# How to use
+First you need to include the library to your page. See below for CDN or NPM options.
+
+## Make a component
+Calling `riotComponent.makeComponent(this)`, where `this` is the tag instance will return the component.
+
+    <script type="riot/tag">
+      <count-down>
+        <span>{label}</span><span>{count}</span>
+    
+        var self = riotComponent.makeComponent(this)
+        ....
+	
+## Method
+Mthods allows the parent element to call functions in the child elements. After the element is made a component. You can a method to it like this:
+
+	... // More code here
+        self._method('restart', function() {
+	... // More code there
+
+then from the outside, the the method can be called like this ...
+
+      document.getElementById(...).restart()
+
+Parameters can be passed to the method just like other functions.
+
+## Property
+Properties expose settable value of the children elements to the parent. When set the child will be notify so that appropirate actions (such as update) can be done. Let say you need to allow the label value to be set, you can do this:
+
+        self._property('label', function(newLebel) {
+          self.label = newLebel
+          self.update()
+        })
+
+So when the label property got set from the outside, you will get the element updated.
+
+      document.getElementById(...).label = 'New Label'
+
+
+## Event
+Event will allows the child elements to notify the parent element when something happen. Let say we want to notify the parent when the count down have reach zero. We can add the zero even to the element.
+
+        var onzero = self._event('zero')
+	...
+	... // Every second
+	    self.count--
+	    if (self.count == 0) {
+              onzero()	// trigger the event
+              clearTimeout(timer)
+            }
+The parent can listen to the event like this:
+
+      document.getElementById(...).on('zero', function() {
+      ... do things when zero ...
+
+We can also make an onXXX options as listener as well.
+
+        var onzero = self._event('zero', opts.onzero)
+	...
+
+and it can be used like this:
+
+    <count-down id='count' onzero='{handleZero}'></count-down>
+    ...
+    function handleZero() {
+        ...
+    }
+
+Parameters can be passed on when the event is trigged as usual.
 
 ## Example
     <count-down id='count' label='Count: ' start=5></count-down>
