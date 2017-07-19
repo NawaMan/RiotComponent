@@ -1,0 +1,25 @@
+{
+  "name": "riot-component",
+  "version": "1.0.0",
+  "description": "Library to make it easy to make riotjs component.",
+  "main": "riot-component.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NawaMan/RiotComponent.git"
+  },
+  "keywords": [
+    "Riot",
+    "Component",
+    "Library",
+    "Communication"
+  ],
+  "author": "Nawapunth Manusitthipol <nawa@nawaman.net> (https://github.com/NawaMan/RiotComponent)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NawaMan/RiotComponent/issues"
+  },
+  "homepage": "https://github.com/NawaMan/RiotComponent#readme"
+}
