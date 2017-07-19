@@ -1,5 +1,5 @@
 {
-    "name": "riot-component",
+    "name": "riotcomponent",
     "version": "0.0.4",
     "description": "Library to make it easy to make riotjs component.",
     "main": "riot-component.js",
