@@ -57,7 +57,7 @@ RiotComponent adds method, property or event to the root element so that it can 
 
 At the bottom of the aboce example, you can see that we can listen to the event `zero`, change the value of the `label` options (and have it trigger the update) and call a method `restart()` all directly on the `count` element. It is much more convenient and intuitive to do this than using observable bus as commonly recommended.
 
-Try the aboce out here [LIVE DEMO](https://jsfiddle.net/jcdxdrpk/17/ "Live demo!")
+Try the aboce out here [Live demo on jsFiddle](https://jsfiddle.net/jcdxdrpk/17/ "Live demo on jsFiddle!")
 
 ## CDN
 ### Non-Minified
