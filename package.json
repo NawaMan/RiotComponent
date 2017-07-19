@@ -1,25 +1,26 @@
 {
-  "name": "riot-component",
-  "version": "1.0.0",
-  "description": "Library to make it easy to make riotjs component.",
-  "main": "riot-component.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/NawaMan/RiotComponent.git"
-  },
-  "keywords": [
-    "Riot",
-    "Component",
-    "Library",
-    "Communication"
-  ],
-  "author": "Nawapunth Manusitthipol <nawa@nawaman.net> (https://github.com/NawaMan/RiotComponent)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/NawaMan/RiotComponent/issues"
-  },
-  "homepage": "https://github.com/NawaMan/RiotComponent#readme"
+    "name": "riot-component",
+    "version": "0.0.4",
+    "description": "Library to make it easy to make riotjs component.",
+    "main": "riot-component.js",
+    "scripts": {
+        "minify": "minify --output riot-component.min.js riot-component.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/NawaMan/RiotComponent.git"
+    },
+    "keywords": [
+        "Riot",
+        "Component",
+        "Library",
+        "Communication"
+    ],
+    "author": "Nawapunth Manusitthipol <nawa@nawaman.net> (https://github.com/NawaMan/RiotComponent)",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/NawaMan/RiotComponent/issues"
+    },
+    "homepage": "https://github.com/NawaMan/RiotComponent#readme"
 }
