@@ -1,6 +1,6 @@
 {
     "name": "riotcomponent",
-    "version": "0.0.4",
+    "version": "0.0.6",
     "description": "Library to make it easy to make riotjs component.",
     "main": "riotcomponent.js",
     "scripts": {
@@ -22,5 +22,8 @@
     "bugs": {
         "url": "https://github.com/NawaMan/RiotComponent/issues"
     },
-    "homepage": "https://github.com/NawaMan/RiotComponent#readme"
+    "homepage": "https://github.com/NawaMan/RiotComponent#readme",
+    "dependencies": {
+        "riot": "^3.6.1"
+    }
 }
