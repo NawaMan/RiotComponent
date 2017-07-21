@@ -4,6 +4,8 @@ The library helps make riotjs elements components.
 # Introduction
 RiotComponent adds methods, properties or events to the root element so that it can be accessed from the outside. **Methods** allow the parent element to call functions in the child elements. **Properties** expose settable values of the child elements to the parent. When set the child will be notified so that appropirate actions (such as update) can be done. **Events** will allows the child elements to notify the parent element when something happened.
 
+Plus! In the line of the minimalist approach of RiotJs, the RiotComponent is sized less than 1K!
+
 # How to use
 First you need to include the library to your page. See below for CDN or NPM options.
 
