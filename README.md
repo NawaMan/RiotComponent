@@ -6,7 +6,7 @@ RiotComponent adds methods, properties or events to the root element so that it 
 
 Plus! In the line of the minimalist approach of RiotJs, the RiotComponent is sized less than 1K!
 
-**NOTE: ** Those from v0.0.10 see the "Migration to v0.1.0" below.
+NOTE: Those from v0.0.10 see the "Migration to v0.1.0" below.
 
 # How to use
 First you need to include the library to your page. See below for CDN or NPM options.
