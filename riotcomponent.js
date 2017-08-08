@@ -1,4 +1,4 @@
-/* RiotComponent v0.0.10, @license MIT */
+/* RiotComponent v0.1.0, @license MIT */
 (function(global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
         typeof define === 'function' && define.amd ? define(factory) :
@@ -6,42 +6,71 @@
 }(this, (function() {
     'use strict';
 
-    var riotComponent = {
-        'makeComponent': function(element) {
-            riot.observable(element.root)
+    var _propsVarName = '_propsValues'
 
-            element['_event'] = function(eventName, callback) {
+    var riotComponent = {
+        'makeComponent': function(tag) {
+            riot.observable(tag.root)
+
+            tag['_event'] = function(eventName, callback) {
                 return function() {
                     var callBackArgs = Array.prototype.slice.call(arguments);
                     var triggerArgs = Array.prototype.slice.call(arguments);
                     triggerArgs.unshift(eventName)
-                    element.root.trigger.apply(element.root, triggerArgs)
+
+                    var elm = tag.root
+                    elm.trigger.apply(tag, triggerArgs)
+                    tag.trigger.apply(tag, triggerArgs)
                     if (typeof(callback) === 'function') {
-                        callback.apply(element.root, callBackArgs);
+                        callback.apply(tag, callBackArgs);
                     }
                 }
             }
-            element['_method'] = function(callName, callBody) {
-                element.root[callName] = function() {
+            tag['_method'] = function(callName, callBody) {
+                var methodDef = function() {
                     var args = Array.prototype.slice.call(arguments);
                     args.unshift(callName)
-                    element.root.trigger.apply(element.root, args)
+                    tag.trigger.apply(tag, args)
                 }
-                element.root.on(callName, callBody)
 
-                element[callName] = element.root[callName]
-                element.on(callName, callBody)
+                var elm = tag.root
+                
+                elm[callName] = methodDef
+                elm.on(callName, callBody)
+
+                tag[callName] = methodDef
+                tag.on(callName, callBody)
             }
-            element['_property'] = function(name, setCallBack) {
-                Object.defineProperty(element.root, name, {
-                    get: function() { return element[name] },
-                    set: setCallBack
-                })
+            tag['_property'] = function(name, setCallBack, getCallBack) {
+                if (!(_propsVarName in tag))
+                    tag[_propsVarName] = {}
+                
+                tag[_propsVarName][name] = tag[name]
+
+                var getFunc = function() {
+                    const underlineValue = tag[_propsVarName][name]
+                    if (getCallBack)
+                        return getCallBack.apply(tag, underlineValue)
+
+                    return underlineValue
+                }
+                var setFunc = function(newValue) {
+                        setCallBack(newValue, function(_newValue) {
+                            tag[_propsVarName][name] = _newValue || newValue
+                        })
+                }
+                var propDef = {
+                    get: getFunc,
+                    set: setFunc
+                }
+
+                var elm = tag.root
+                Object.defineProperty(tag, name, propDef)
+                Object.defineProperty(elm, name, propDef)
             }
-            return element
+            return tag
         }
     }
 
     return riotComponent;
-
 })));
