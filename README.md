@@ -30,7 +30,7 @@ Methods allow the parent element to call functions in the child elements. After 
         self._method('restart', function() { ... })
 	... // More code there
 
-then from the outside, the the method can be called like this ...
+then from the outside, the method can be called like this ...
 
       document.getElementById(...).restart()
 
@@ -68,10 +68,11 @@ Similar to methods, you can access to the comment with `ref`.
 
 Properties also allows you to attach `get` function that post process your value. For example:
 
-        self._property('label', function(newLebel, updateValue) {
+        self._property('label',
+        function(newLebel, updateValue) { // SetCallBack
           updateValue()
           self.update()
-        }, function function(underlineValue) {
+        }, function function(underlineValue) {  // GetCallBack
           if (!underlineValue)  // If the underline value is never set, return the default.
             return self.DEFAULT_LABEL
           return underlineValue
