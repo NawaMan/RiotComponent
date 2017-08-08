@@ -6,7 +6,7 @@ RiotComponent adds methods, properties or events to the root element so that it 
 
 Plus! In the line of the minimalist approach of RiotJs, the RiotComponent is sized less than 1K!
 
-NOTE: Those from v0.0.10 see the "Migration to v0.1.0" below.
+NOTE: Those from v0.0.X see the "Migration to v0.1.X" below.
 
 # How to use
 First you need to include the library to your page. See below for CDN or NPM options.
@@ -180,7 +180,7 @@ https://gitcdn.xyz/repo/NawaMan/RiotComponent/master/riotcomponent.min.js
 This library only require `riot`.
 
 
-## Migrate from v0.0.10 to v0.1.0
+## Migrate from v0.0.X to v0.1.X
 In v0.1.0, the tag itself also become a component. This cause a problem to properties declared in v0.0.10 as the value will be update as a field in the tag. To solve this, the value was hidden in field called '_propsValues' but this is an implementation details we do not want to expose so we pass on a function to update the value to the setCallBack instead.
 
 So what was previously 
