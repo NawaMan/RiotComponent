@@ -165,16 +165,16 @@ Parameters can be passed on when the event is trigged as usual.
 At the bottom of the above example, you can see that we can listen to the event `zero`, change the value of the `label` options (and have it trigger the update) and call a method `restart()` all directly on the `count` element. It is much more convenient and intuitive to do this than using observable bus as commonly recommended.
 
 ## DEMO
-Try the aboce out here [Live demo on jsFiddle](https://jsfiddle.net/xxu9ae03/ "Live demo on jsFiddle!")
+Try the aboce out here [Live demo on jsFiddle](https://jsfiddle.net/xxu9ae03/1/ "Live demo on jsFiddle!")
 
 ## NPM
     npm install riotcomponent
 
 ## CDN
 ### Non-Minified
-https://gitcdn.xyz/repo/NawaMan/RiotComponent/master/riotcomponent.js
+https://cdn.rawgit.com/NawaMan/RiotComponent/master/riotcomponent.js
 ### Minified
-https://gitcdn.xyz/repo/NawaMan/RiotComponent/master/riotcomponent.min.js
+https://cdn.rawgit.com/NawaMan/RiotComponent/master/riotcomponent.min.js
 
 ## Dependency
 This library only require `riot`.
