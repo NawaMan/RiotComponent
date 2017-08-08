@@ -1,8 +1,10 @@
 # RiotComponent
-The library to make it easy to make riotjs component.
+The library helps make riotjs elements components.
 
 # Introduction
-RiotComponent adds method, property or event to the root element so that it can be accessed from the outside. **Methods** allows the parent element to call functions in the child elements. **Properties** expose settable value of the children elements to the parent. When set the child will be notify so that appropirate actions (such as update) can be done. **Events** will allows the child elements to notify the parent element when something happen.
+RiotComponent adds methods, properties or events to the root element so that it can be accessed from the outside. **Methods** allow the parent element to call functions in the child elements. **Properties** expose settable values of the child elements to the parent. When set the child will be notified so that appropirate actions (such as update) can be done. **Events** will allows the child elements to notify the parent element when something happened.
+
+Plus! In the line of the minimalist approach of RiotJs, the RiotComponent is sized less than 1K!
 
 # How to use
 First you need to include the library to your page. See below for CDN or NPM options.
@@ -18,10 +20,10 @@ Calling `riotComponent.makeComponent(this)`, where `this` is the tag instance wi
         ....
 	
 ## Method
-Mthods allows the parent element to call functions in the child elements. After the element is made a component. You can a method to it like this:
+Methods allows the parent element to call functions in the child elements. After the element is made a component. You can add a method to it like this:
 
 	... // More code here
-        self._method('restart', function() {
+        self._method('restart', function() { ... })
 	... // More code there
 
 then from the outside, the the method can be called like this ...
@@ -31,7 +33,7 @@ then from the outside, the the method can be called like this ...
 Parameters can be passed to the method just like other functions.
 
 ## Property
-Properties expose settable value of the children elements to the parent. When set the child will be notify so that appropirate actions (such as update) can be done. Let say you need to allow the label value to be set, you can do this:
+Properties expose settable values of the child elements to the parent. When set the child will be notify so that appropirate actions (such as update) can be done. Let say you need to allow the label value to be set, you can do this:
 
         self._property('label', function(newLebel) {
           self.label = newLebel
@@ -44,7 +46,7 @@ So when the label property got set from the outside, you will get the element up
 
 
 ## Event
-Event will allows the child elements to notify the parent element when something happen. Let say we want to notify the parent when the count down have reach zero. We can add the zero even to the element.
+Event will allows the child elements to notify the parent element when something happened. Let say we want to notify the parent when the count down have reach zero. We can add the zero event to the element.
 
         var onzero = self._event('zero')
 	...
@@ -113,7 +115,7 @@ Parameters can be passed on when the event is trigged as usual.
     </script>
 
     <script>
-	    riot.mount('*')
+      riot.mount('*')
   
       var count = document.getElementById('count')
       count.on('zero', function() {
