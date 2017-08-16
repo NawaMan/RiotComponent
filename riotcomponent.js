@@ -1,4 +1,4 @@
-/* RiotComponent v0.1.1, @license MIT */
+/* RiotComponent v0.1.2, @license MIT */
 (function(global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
         typeof define === 'function' && define.amd ? define(factory) :
@@ -29,17 +29,13 @@
             tag['_method'] = function(callName, callBody) {
                 var methodDef = function() {
                     var args = Array.prototype.slice.call(arguments);
-                    args.unshift(callName)
-                    tag.trigger.apply(tag, args)
+                    return callBody.apply(tag, args)
                 }
 
                 var elm = tag.root
                 
                 elm[callName] = methodDef
-                elm.on(callName, callBody)
-
                 tag[callName] = methodDef
-                tag.on(callName, callBody)
             }
             tag['_property'] = function(name, setCallBack, getCallBack) {
                 if (!(_propsVarName in tag))
