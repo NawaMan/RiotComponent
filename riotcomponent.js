@@ -46,7 +46,7 @@
                 var getFunc = function() {
                     const underlineValue = tag[_propsVarName][name]
                     if (getCallBack)
-                        return getCallBack.apply(tag, underlineValue)
+                        return getCallBack.apply(tag, [underlineValue])
 
                     return underlineValue
                 }
