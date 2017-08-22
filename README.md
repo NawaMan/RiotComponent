@@ -1,6 +1,8 @@
 # RiotComponent
 The library helps make RiotJS elements components.
 
+[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][travis-image]][travis-url]
+
 # Introduction
 RiotComponent adds methods, properties or events to the root element so that it can be accessed from the outside. **Methods** allow the parent element to call functions in the child elements. **Properties** expose settable values of the child elements to the parent. When set the child will be notified so that appropirate actions (such as update) can be done. **Events** will allows the child elements to notify the parent element when something happened.
 
@@ -204,3 +206,9 @@ This also provide flexibility to the setCallBack because the new value can be pr
           storeValue(preprocessNewLabel)
           self.update()
         })
+	
+[npm-url]: https://npmjs.org/package/riotcomponent
+[downloads-image]: http://img.shields.io/npm/dm/riotcomponent.svg
+[npm-image]: http://img.shields.io/npm/v/riotcomponent.svg
+[travis-url]: https://travis-ci.org/jmblog/riotcomponent
+[travis-image]: http://img.shields.io/travis/jmblog/riotcomponent.svg
