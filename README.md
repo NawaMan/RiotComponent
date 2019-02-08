@@ -174,9 +174,9 @@ Try the above out here [Live demo on jsFiddle](https://jsfiddle.net/xxu9ae03/1/ 
 
 ## CDN
 ### Non-Minified
-https://cdn.rawgit.com/NawaMan/RiotComponent/master/riotcomponent.js
+https://raw.githubusercontent.com/NawaMan/RiotComponent/master/riotcomponent.js
 ### Minified
-https://cdn.rawgit.com/NawaMan/RiotComponent/master/riotcomponent.min.js
+https://cdn.staticaly.com/gh/NawaMan/RiotComponent/master/riotcomponent.min.js
 
 ## Dependency
 This library only require `riot`.

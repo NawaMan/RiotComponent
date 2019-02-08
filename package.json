@@ -4,7 +4,7 @@
     "description": "Library to make it easy to make riotjs component.",
     "main": "riotcomponent.js",
     "scripts": {
-        "minify": "minify --output riotcomponent.min.js riotcomponent.js",
+        "minify": "minify riotcomponent.js > riotcomponent.min.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
@@ -24,6 +24,6 @@
     },
     "homepage": "https://github.com/NawaMan/RiotComponent#readme",
     "dependencies": {
-        "riot": "^3.6.1"
+        "riot": "^3.7.3"
     }
 }
